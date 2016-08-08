@@ -151,9 +151,6 @@ def main(argv):
             expand_patchqueue(args, tar, os.path.join(patch_dir, 'series'))
         elif 'patches' in link:
             patch_dir = os.path.join(tar_root, str(link['patches']))
-        else:
-            sys.exit("%s: %s: Expected one of 'patchqueue' or 'patches'" %
-                     (sys.argv[0], args.link))
 
         # Extract sources contained in the tarball
         spec = planex.spec.Spec(args.output, topdir=args.topdir,
